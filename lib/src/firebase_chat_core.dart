@@ -351,6 +351,12 @@ class FirebaseChatCore {
         id: '',
         partialFile: partialMessage,
       );
+    } else if (partialMessage is types.PartialVideo) {
+      message = types.VideoMessage.fromPartial(
+        author: types.User(id: firebaseUser!.uid),
+        id: '',
+        partialVideo: partialMessage,
+      );
     } else if (partialMessage is types.PartialImage) {
       message = types.ImageMessage.fromPartial(
         author: types.User(id: firebaseUser!.uid),
